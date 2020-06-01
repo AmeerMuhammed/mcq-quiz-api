@@ -5,7 +5,7 @@ const router = require('./router')
 require('dotenv').config()
 const app = express()
 
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true,useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true,useUnifiedTopology: true,useFindAndModify: false})
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
