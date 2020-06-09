@@ -1,3 +1,4 @@
+const crypto = require('crypto')
 const Question = require('../models/Question')
 require('./validator')
 
@@ -27,3 +28,11 @@ exports.deleteQuestion = async(req,res) =>{
             if (err) return res.send({"Error":"502: Something went wrong!"})
             return res.send({"method":"delete","status":"success",doc}) })
 }
+
+exports.renderIndex = (req,res) => { res.render('index',{id: req.params.id}) }
+
+exports.createHash = () => {
+    let current_date = (new Date()).valueOf().toString()
+    let random = Math.random().toString()
+    return crypto.createHash('sha1').update(current_date + random).digest('hex')
+  }

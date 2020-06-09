@@ -1,0 +1,82 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title MCQ Quiz API
+  style.
+    * {
+    margin: 0;
+    }
+    body {
+    font-weight: 700;
+    text-align: center;
+    background-color: #d4f8e8;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    nav {
+    text-align: left;
+    height: 60px;
+    background-color: #1eb2a6;
+    }
+    nav li {
+    list-style: none;
+    padding: 20px;
+    color: white;
+    }
+    .docs-btn {
+    padding: 10px;
+    background-color: #1eb2a6;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    }
+    .docs-btn:hover {
+    background-color: white;
+    color: teal;
+    }
+    input {
+    opacity: 0;
+    }
+    .api {
+    border-radius: 5px;
+    position: absolute;
+    padding: 30px 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    color: white;
+    width: 90vw;
+    background-color: teal;
+    }
+    @media only screen and (max-device-width: 480px) {
+    .api {
+    left: 40%;
+    top: 40%;
+    width: 50vw;
+    word-wrap: break-word;
+    height: 200px;
+    }
+    }
+  script.
+    function cp() {
+    var copyText = document.getElementById("apikey");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    }
+nav
+  li MCQ Quiz API v1.2
+input#apikey(type='text' value=id)
+.api
+  | API KEY : 
+  span= id
+  br
+  br
+  br
+  a.docs-btn(href='#' onclick='cp()') Copy to Clipboard
+  br
+  br
+  br
+  a.docs-btn Read Docs
