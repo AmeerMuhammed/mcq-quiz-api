@@ -9,8 +9,8 @@ require('dotenv').config()
 let apikeyGen = ""
 
 router.get('/index/:id',controller.renderIndex)
-router.get('/',controller.getQuestions)
-router.get('/:count',controller.getQuestions)
+router.get('/:key',controller.getQuestions)
+router.get('/:key/:count',controller.getQuestions)
 router.post('/',controller.addQuestions)
 router.put('/',controller.updateQuestion)
 router.delete('/',controller.deleteQuestion)
