@@ -3,6 +3,7 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title MCQ Quiz API
+  link(rel='shortcut icon' type='image/x-icon' href='')
   style.
     * {
     margin: 0;
@@ -35,9 +36,6 @@ head
     background-color: white;
     color: teal;
     }
-    input {
-    opacity: 0;
-    }
     .api {
     border-radius: 5px;
     position: absolute;
@@ -50,6 +48,21 @@ head
     width: 90vw;
     background-color: teal;
     }
+    input {
+    opacity: 0;
+    }
+    .explore {
+    background-color: black;
+    color: white;
+    float: right;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    }
+    .explore:hover {
+    background-color: white;
+    color: black;
+    }
     @media only screen and (max-device-width: 480px) {
     .api {
     left: 40%;
@@ -58,16 +71,22 @@ head
     word-wrap: break-word;
     height: 200px;
     }
+    .explore{
+    float:none;
+    }
     }
   script.
-    function cp() {
+    async function cp() {
     var copyText = document.getElementById("apikey");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
     }
 nav
-  li MCQ Quiz API v1.2
+  li
+    | MCQ Quiz API v1.2 
+    a(href='')
+      a.explore(href='https://ameermuhammed.github.io') Explore
 input#apikey(type='text' value=id)
 .api
   | API KEY : 
@@ -75,8 +94,8 @@ input#apikey(type='text' value=id)
   br
   br
   br
-  a.docs-btn(href='#' onclick='cp()') Copy to Clipboard
+  a#cp-btn.docs-btn(href='#' onclick='cp()') Copy to Clipboard
   br
   br
   br
-  a.docs-btn Read Docs
+  a.docs-btn(href='https://ameermuhammed.github.io/mcq-quiz-api/README.md') Read Docs
