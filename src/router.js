@@ -10,7 +10,7 @@ let apikeyGen = ""
 
 router.get('/index/:id',controller.renderIndex)
 router.get('/:key',controller.getQuestions)
-router.get('/:key/:count',controller.getQuestions)
+router.get('/getBulk/:key/:count',controller.getQuestions)
 router.post('/',controller.addQuestions)
 router.put('/',controller.updateQuestion)
 router.delete('/',controller.deleteQuestion)
@@ -26,7 +26,7 @@ router.get('/auth/google/callback',
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: process.env.GOOGLE_REDIRECT_URL
   },
   function(accessToken, refreshToken, profile, done) {
         User.findOne({'googleId': profile.id }, 
