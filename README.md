@@ -19,6 +19,7 @@
 |DELETE|/|<br>Sample DELETE request body:<pre>{<br>"apikey":"***{API KEY}***"<br>"_id": "***{ID}***"<br>}</pre>|
 # Samples
 ## GET /***{APIKEY}***/
+*Response:*
 ```
 [
     {
@@ -34,6 +35,7 @@
 ]
 ```
 ## GET /getBulk/***{APIKEY}/{COUNT}***/
+*Response:*
 ```
 [
     {
