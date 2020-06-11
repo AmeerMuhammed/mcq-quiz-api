@@ -30,29 +30,36 @@
             padding: 20px;
             color: white;
         }
-
+        a {
+            text-decoration: none;
+            color: white;
+        }
         .container {
             border-radius: 5px;
             position: absolute;
             padding: 30px 10px;
             left: 50%;
-            transform: translateX(-50%);
+            top:50%;
+            transform: translate(-50%,-50%);
             height: 50px;
             color: white;
-            width: 90vw;
+            width: 70vw;
             background-color: teal;
             margin-top: 10px;
         }
         .readme {
             position: absolute;
+            bottom: 30px;
             border-radius: 5px;
             padding: 10px;
             color: white;
-            width: 90vw;
+            width: 100px;
             background-color: teal; 
-            margin-top: 50px;
             left: 50%;
             transform: translateX(-50%);
+        }
+        .readme:hover {
+            background-color: #1eb2a6;
         }
         .explore {
             background-color: black;
@@ -75,9 +82,6 @@
             .explore{
                 float:none;
             }
-            .readme {
-                margin-top: 20px;
-            }
         }
     </style>
 </head>
@@ -93,12 +97,11 @@ Generate API Key &#8594;
 <a href="https://mcq-quiz-app.herokuapp.com/auth/google/">
 <img style='vertical-align:middle;' src='./assets/google_logo.png'></a>
 
+
+</div>
 <div class="readme">
-    <i>Request Body:</i> https://url.com/{route}&API_KEY={apiKey}
-    <br><br><br><br><br><br>
-    For more, read <a href="https://github.com/AmeerMuhammed/mcq-quiz-api/README.md">Docs</a>
-</div>
-</div>
+    <a href="https://github.com/AmeerMuhammed/mcq-quiz-api/blob/master/README.md">Read Docs</a>
+   </div>
 </body>
 
 </html>
